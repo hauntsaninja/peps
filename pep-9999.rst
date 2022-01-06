@@ -80,7 +80,7 @@ to a Python dict.
 ``parse_float`` is a function that takes a string and returns a float, as with ``json.load``.
 For example, ``decimal.Decimal`` can be used in cases where precision is important.
 
-The returned object contains only basic Python objects (``str``, ``int``,
+The returned object contains only basic Python objects (``str``, ``int``, ``bool``, ``float``,
 ``datetime.{datetime,date,time}``, ``list``, ``dict`` with string keys).
 
 ``tomllib.TOMLDecodeError`` is raised in the case of invalid TOML.
@@ -120,7 +120,7 @@ Petr Viktorin has indicated willingness to maintain a read API,
 <https://discuss.python.org/t/adopting-recommending-a-toml-parser/4068/88>`__.
 
 Rewriting the parser in C is not deemed necessary at this time. It's rare for
-TOML parsing to be a bottleneck in application. Users with higher performance
+TOML parsing to be a bottleneck in applications. Users with higher performance
 needs can use a third party library (as is already often the case with JSON,
 despite a stdlib extension module).
 
