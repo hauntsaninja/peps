@@ -81,7 +81,8 @@ to a Python dict.
 For example, ``decimal.Decimal`` can be used in cases where precision is important.
 
 The returned object contains only basic Python objects (``str``, ``int``, ``bool``, ``float``,
-``datetime.{datetime,date,time}``, ``list``, ``dict`` with string keys).
+``datetime.{datetime,date,time}``, ``list``, ``dict`` with string keys),
+and the results of `parse_float`.
 
 ``tomllib.TOMLDecodeError`` is raised in the case of invalid TOML.
 
@@ -265,7 +266,22 @@ Using a binary file allows us to a) ensure utf-8 is the encoding used,
 b) avoid incorrectly parsing single carriage returns as valid TOML due to
 universal newlines.
 
-TODO: why does ``tomllib.loads`` take str but not bytes, then??
+Type accepted by the first argument of ``tomllib.loads``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While ``tomllib.load`` takes a binary file, ``tomllib.loads`` takes
+a text string. This may seem inconsistent at first.
+
+Quoting TOML v1.0.0 specification:
+
+> A TOML file must be a valid UTF-8 encoded Unicode document.
+
+``tomllib.loads`` does not intend to load a TOML file, but rather the
+document that the file stores. The most natural representation of
+a Unicode document in Python is ``str``, not ``bytes``.
+
+It is possible to add ``bytes`` support in the future if needed, but
+we are not aware of any use cases for it.
 
 Controlling the type of mappings returned by ``tomllib.load[s]``
 ----------------------------------------------------------------
