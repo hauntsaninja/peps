@@ -133,7 +133,7 @@ For example, ``memoryview`` may be declared as follows in a stub:
 
 .. code-block:: python
 
-   class bytes(types.Buffer, Sequence[int]):
+   class memoryview(types.Buffer, Sequence[int]):
        def decode(self, ...): ...
        ...
 
