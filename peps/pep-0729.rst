@@ -130,7 +130,7 @@ The Typing Council's mandate is to ensure that the Python type system is:
   by :pep:`484`, the primary use case is static analysis, but there are others,
   such as runtime type checking, static compilation, IDE support, and documentation.
   The Typing Council should consider all of these use cases when making decisions,
-  and be open to supporting additinal use cases as they come up.
+  and be open to supporting additional use cases as they come up.
 * **Usable**: The type system should be easy to use for Python developers. It
   should be ergonomic to write well-typed Python code that is accepted by type
   checkers. There should be good documentation for the type system.
@@ -159,14 +159,14 @@ be done by fiat, but the Typing Council can choose a replacement by any means
 they see fit, including a vote.
 
 The Typing Council remains accountable to the Steering Council. At any point,
-for any reason, the Steering Council could (publicly or privately) make or
-request a (specific or non-specific) change to the composition of the
+for any reason, the Steering Council could (publicly or privately) make a
+specific change or request a non-specific change to the composition of the
 Typing Council.
 
-We acknowledge that this is a not particularly democratic structure that puts
+We acknowledge that this is a not particularly democratic structure and puts
 a lot of faith in the Typing Council. However, the Python community has a long
 history of success with not particularly democratic structures! We believe
-self-governance, regular cycling of membership and accountability to the
+self-governance, cycling of membership, and accountability to the
 Steering Council will be sufficient to ensure that the Typing Council is meeting
 the needs of the community.
 
@@ -350,7 +350,7 @@ anywhere in the type system by improving and clarifying the specification.
 A formalization effort can still proceed by gradually replacing sections of the
 specification.
 
-Alternate Governance Mechanisms
+Alternate governance mechanisms
 -------------------------------
 
 An earlier draft of this PEP suggested that the Steering Council appoint
